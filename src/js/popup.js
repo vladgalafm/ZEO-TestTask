@@ -5,8 +5,7 @@ jQuery(document).ready(function($) {
   const hidePopup = $('.js-hide-popup');
 
   showPopup.click(() => {
-    popup.removeClass('popup--disappearance');
-    popup.addClass('popup--visible popup--appearance');
+    popup.addClass('popup--visible');
     $('body').addClass('noscroll');
   });
 
@@ -15,17 +14,13 @@ jQuery(document).ready(function($) {
   });
 
   hidePopup.click((e) => {
-    popup.removeClass('popup--appearance');
-    popup.addClass('popup--disappearance');
-    setTimeout(() => {
-      popup.removeClass('popup--visible ');
-    }, 250);
+    popup.removeClass('popup--visible');
     $('body').removeClass('noscroll');
 
     if ($(e.target).hasClass('js-uninstall-app')) {
       setTimeout(() => {
         alert('DONE');
-      }, 300);
+      }, 350);
     }
   });
 });

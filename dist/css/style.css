@@ -31,33 +31,29 @@ button {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0);
   visibility: hidden;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.82, 0.21, 0.9, 0.7);
+  -o-transition-timing-function: cubic-bezier(0.82, 0.21, 0.9, 0.7);
+  transition-timing-function: cubic-bezier(0.82, 0.21, 0.9, 0.7);
 }
 
 .popup--visible {
+  background-color: rgba(0, 0, 0, 0.3);
   visibility: visible;
 }
 
-.popup--appearance .popup__body {
-  -webkit-animation-name: appearance;
-  animation-name: appearance;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
+.popup--visible .popup__body {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  -ms-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
-.popup--disappearance .popup__body {
-  -webkit-animation-name: disappearance;
-  animation-name: disappearance;
-  -webkit-animation-duration: 0.25s;
-  animation-duration: 0.25s;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-}
-
-.popup--disappearance .popup__button,
-.popup--disappearance .popup__close-icon path {
+.popup--visible .popup__button,
+.popup--visible .popup__close-icon path {
   -webkit-transition-duration: 0s;
   -o-transition-duration: 0s;
   transition-duration: 0s;
@@ -67,17 +63,20 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%) scale(0);
+  -ms-transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
   width: 600px;
   padding: 40px 70px 50px;
   text-align: center;
   background-color: #ffffff;
   border-radius: 10px;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.82, 0.21, 0.9, 0.7);
+  -o-transition-timing-function: cubic-bezier(0.82, 0.21, 0.9, 0.7);
+  transition-timing-function: cubic-bezier(0.82, 0.21, 0.9, 0.7);
 }
 
 .popup__close-icon {
@@ -143,66 +142,6 @@ button {
   -webkit-box-shadow: inset 0 0 0 2px #ff382d;
   box-shadow: inset 0 0 0 2px #ff382d;
   background-color: #ffffff;
-}
-
-@-webkit-keyframes appearance {
-  0% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(0.7);
-    transform: translate(-50%, -50%) scale(0.7);
-  }
-  100% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(1);
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-@keyframes appearance {
-  0% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(0.7);
-    transform: translate(-50%, -50%) scale(0.7);
-  }
-  100% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(1);
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-@-webkit-keyframes disappearance {
-  0% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(1);
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(0);
-    transform: translate(-50%, -50%) scale(0);
-  }
-}
-
-@keyframes disappearance {
-  0% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(1);
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(0);
-    transform: translate(-50%, -50%) scale(0);
-  }
 }
 
 .show-popup {
