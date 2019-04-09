@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+button {
+  outline: none;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}

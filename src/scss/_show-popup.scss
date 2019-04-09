@@ -1,0 +1,19 @@
+.show-popup {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  padding: 10px 25px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #8c94a4;
+  border-radius: 5px;
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  transition-duration: 0.25s;
+
+  &:hover {
+    background-color: #aaaaaa;
+    box-shadow: 0 3px 2px 0 #8c94a4;
+  }
+}
